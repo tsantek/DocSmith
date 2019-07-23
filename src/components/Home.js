@@ -8,8 +8,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Link to={{ pathname: "/resumes" }}>Link to new Resume</Link>
-        <Link to={{ pathname: "/coverletter" }}> Link to new Cover</Link>
+        <p>Home page</p>
+        {/* BODY OF HOME PAGE */}
       </div>
     );
   }
