@@ -1,3 +1,5 @@
+// Cover Letter PAGE / Component
+
 import React, { Component } from "react";
 
 class CoverLetter extends Component {
