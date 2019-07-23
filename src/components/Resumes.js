@@ -4,9 +4,12 @@ import React from "react";
 
 const Resumes = props => {
   return (
-    <div>
-      <p>Resumes</p>
-    </div>
+    <React.Fragment>
+      <header>
+        <p>HEADER</p>
+      </header>
+      <main />
+    </React.Fragment>
   );
 };
 
