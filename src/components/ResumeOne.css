@@ -234,3 +234,26 @@ form {
 .add-btn:focus {
     border: 2px solid rgb(52, 116, 111) !important;
 }
+
+@media print {
+    .bodyStyle {
+        margin: 0;
+        padding: 0px;
+        background-color: #fff;
+    }
+    .btn-add-new-eployment {
+        display: none;
+    }
+    .btn-add-new-project {
+        display: none;
+    }
+    .btn-add-new-education {
+        display: none;
+    }
+    header {
+        display: none;
+    }
+    .container {
+        max-width: 100%;
+    }
+}
