@@ -98,15 +98,23 @@ class ResumeOne extends Component {
     localStorage.setItem("resumeOne", JSON.stringify(newState));
   };
 
-  handleOnChangeFirstEployment = e => {
+  changeInputEmployment = (e, i) => {
     let value = e.target.value;
     let name = e.target.name;
-    // let newState = {
-    //   ...this.state,
-    //   eployment: this.state.eployment.map()
-    // };
-    // this.setState(newState);
-    // localStorage.setItem("resumeOne", JSON.stringify(newState));
+    let newState = {
+      ...this.state,
+      employment: this.state.employment.map((item, index) => {
+        if (index === i) {
+          return {
+            ...item,
+            [name]: value
+          };
+        }
+        return item;
+      })
+    };
+    this.setState(newState);
+    localStorage.setItem("resumeOne", JSON.stringify(newState));
   };
 
   render() {
@@ -183,9 +191,8 @@ class ResumeOne extends Component {
                 rows="2"
                 name="summary"
                 onChange={this.handleOnChangeInfo}
-              >
-                {this.state.summary}
-              </textarea>
+                value={this.state.summary}
+              />
             </div>
             {/* EMPLOYMENT */}
             <div className="summary-container">
@@ -195,28 +202,42 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time "
                     value={this.state.employment[0].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[0].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[0].title}
+                    name="title"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                   <input
                     className="city"
                     value={this.state.employment[0].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                   <br />
-                  <textarea rows="1">
-                    {this.state.employment[0].responsibilityOne}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[0].responsibilityTwo}
-                  </textarea>
+                  <textarea
+                    rows="1"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 0)}
+                    value={this.state.employment[0].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 0)}
+                    value={this.state.employment[0].responsibilityTwo}
+                  />
                 </div>
               </div>
 
@@ -227,28 +248,42 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time"
                     value={this.state.employment[1].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[1].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[1].title}
+                    name="title"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                   <input
                     className="city"
                     value={this.state.employment[1].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                   <br />
-                  <textarea rows="1">
-                    {this.state.employment[1].responsibilityOne}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[1].responsibilityTwo}
-                  </textarea>
+                  <textarea
+                    rows="2"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 1)}
+                    value={this.state.employment[1].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 1)}
+                    value={this.state.employment[1].responsibilityTwo}
+                  />
                 </div>
               </div>
               {/* Three */}
@@ -256,30 +291,44 @@ class ResumeOne extends Component {
               <div className="employment-container-section row">
                 <div className="col-md-3">
                   <input
-                    className="eployment-time "
+                    className="eployment-time"
                     value={this.state.employment[2].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 2)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[2].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 2)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[2].title}
+                    name="title"
+                    onChange={this.handleOnChangeThreeEployment}
                   />
                   <input
                     className="city"
                     value={this.state.employment[2].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 2)}
                   />
                   <br />
-                  <textarea rows="2">
-                    {this.state.employment[2].responsibilityOne}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[2].responsibilityTwo}
-                  </textarea>
+                  <textarea
+                    rows="2"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 2)}
+                    value={this.state.employment[2].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 2)}
+                    value={this.state.employment[2].responsibilityTwo}
+                  />
                 </div>
               </div>
               {/* Four */}
@@ -289,28 +338,42 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time "
                     value={this.state.employment[3].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[3].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[3].title}
+                    name="title"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                   <input
                     className="city"
                     value={this.state.employment[3].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                   <br />
-                  <textarea rows="2">
-                    {this.state.employment[3].responsibilityOne}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[3].responsibilityTwo}
-                  </textarea>
+                  <textarea
+                    rows="2"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 3)}
+                    value={this.state.employment[3].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 3)}
+                    value={this.state.employment[3].responsibilityTwo}
+                  />
                 </div>
               </div>
               {/* end */}
