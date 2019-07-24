@@ -3,18 +3,20 @@ import React from "react";
 import "./customStyles/App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Resumes from "./components/Resumes";
-import CoverLetters from "./components/CoverLetters";
+// import Resumes from "./components/Resumes";
+// import CoverLetters from "./components/CoverLetters";
 import ResumeOne from "./components/ResumeOne";
+import CoverLetterOne from "./components/CoverLetterOne";
 
 const App = () => {
   return (
     <Router>
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/resumes" component={Resumes} />
+        {/* <Route path="/resumes" component={Resumes} /> */}
+        <Route path="/CoverLetterOne" component={CoverLetterOne} />
         <Route path="/one" component={ResumeOne} />
-        <Route path="/coverletters" component={CoverLetters} />
+        {/* <Route path="/coverletters" component={CoverLetters} /> */}
       </div>
     </Router>
   );
