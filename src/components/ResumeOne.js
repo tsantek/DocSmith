@@ -6,7 +6,7 @@ class ResumeOne extends Component {
     addNewEploymentToggle: false,
     addNewEducationToggle: false,
     name: "THOMAS THOMPSON",
-    workingPeriod: "SOFTWARE ENGINEER",
+    title: "SOFTWARE ENGINEER",
     email: "email@tomsquared.co",
     web: "tomsquared.co",
     phone: "555-248-0950",
@@ -17,47 +17,51 @@ class ResumeOne extends Component {
     employment: [
       {
         id: 1,
-        time: "Jun 2012 to Current",
+        workingPeriod: "Jun 2012 to Current",
         company: "Corespace Sciences",
         title: "Software Engineer",
         city: "Boston, MA",
         responsibilityOne:
           "* Designed and implemented new version of Corespace's full-body motion-tracking software.",
         responsibilityTwo:
-          "* Work resulted in a 25% increase in accuracy and 15% increase in speed over the existing version."
+          "* Work resulted in a 25% increase in accuracy and 15% increase in speed over the existing version.",
+        period: "Jun 2012 to Current"
       },
       {
         id: 2,
-        time: "Jun 2010 to Apr 2012",
+        workingPeriod: "Jun 2010 to Apr 2012",
         company: "Emotional.ly",
         title: "Computer Vision Engineer",
         city: "New York, NY",
         responsibilityOne:
           "* Specialized in applying emotion recognition and classification algorithms to video frames towards Emotional.ly's new video-based emotion-recognition product.",
         responsibilityTwo:
-          "* Assisted with modeling and converting data into formats for input into neural networks."
+          "* Assisted with modeling and converting data into formats for input into neural networks.",
+        period: "Jun 2010 to Apr 2012"
       },
       {
         id: 3,
-        time: "Jun 2009 to Aug 2009",
+        workingPeriod: "Jun 2009 to Aug 2009",
         company: "Emotional.ly",
         title: "Software Engineer Intern",
         city: "New York, NY",
         responsibilityOne:
           "* Expanded Emotional.ly's emotion recognition algorithms to support six additional emotion classifications.",
         responsibilityTwo:
-          "* Compressed data storage modal resulting in a 25% size reduction without data loss."
+          "* Compressed data storage modal resulting in a 25% size reduction without data loss.",
+        period: "Jun 2009 to Aug 2009"
       },
       {
         id: 4,
-        time: "May 2008 to Dec 2008",
+        workingPeriod: "May 2008 to Dec 2008",
         company: "Code:all Foundation",
         title: "Python Course Planner",
         city: "Remote",
         responsibilityOne:
           "* Created three 10-lesson interactive courses for teaching Python and data structures to middle and high school students through Code:all's website.",
         responsibilityTwo:
-          "* Taught several live workshops for Code:all students."
+          "* Taught several live workshops for Code:all students.",
+        period: "May 2008 to Dec 2008"
       }
     ],
 
@@ -103,6 +107,7 @@ class ResumeOne extends Component {
   handlechangeInputEmployment = (e, i) => {
     let value = e.target.value;
     let name = e.target.name;
+    console.log(value, name);
     let newState = {
       ...this.state,
       employment: this.state.employment.map((item, index) => {
@@ -288,14 +293,24 @@ class ResumeOne extends Component {
               {this.state.employment.map((employer, index) => {
                 return (
                   <div
-                    key={employer.time}
+                    key={employer.workingPeriod}
                     className="employment-container-section row"
                   >
                     <div className="col-md-3">
-                      <input
-                        className="eployment-time "
+                      {/* <input
+                        className="eployment-time"
                         value={employer.workingPeriod}
+                        key={employer.workingPeriod}
                         name="workingPeriod"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                      /> */}
+
+                      <input
+                        className="eployment-time"
+                        value={employer.period}
+                        name="period"
                         onChange={e =>
                           this.handlechangeInputEmployment(e, index)
                         }
