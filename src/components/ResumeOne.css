@@ -123,7 +123,6 @@ textarea {
 }
 
 .college {
-    width: 450px !important;
     font-size: 25px;
 }
 
@@ -135,4 +134,103 @@ textarea {
 
 .projects-responsibility {
     padding-top: 10px;
+}
+
+.btn-add-new-eployment {
+    float: right;
+    margin-top: -44px;
+    padding: 5px;
+    color: white;
+    background-color: rgb(52, 116, 111);
+    border-color: rgb(52, 116, 111);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+.add-time {
+    border: 2px solid #ebecee !important;
+    text-align: right;
+    margin-top: 10px;
+    float: right;
+    border-radius: 8px;
+    padding-right: 5px !important;
+}
+
+.add-time:focus {
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-company {
+    border: 2px solid #ebecee !important;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 25px;
+    width: 35%;
+    padding-left: 5px !important;
+}
+
+.add-company:focus {
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-title {
+    border: 2px solid #ebecee !important;
+    margin-top: 10px;
+    border-radius: 8px;
+    width: 30%;
+    margin-left: 5px;
+    padding-left: 5px !important;
+}
+
+.add-title:focus {
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-city {
+    border: 2px solid #ebecee !important;
+    margin-top: 20px;
+    border-radius: 8px;
+    /* width: 33%; */
+    float: right;
+    margin-left: 5px;
+    text-align: right;
+    padding-right: 5px !important;
+}
+
+.add-city:focus {
+    outline: none;
+    border-radius: 8px;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-responsibility {
+    border-radius: 8px;
+    border: 2px solid #ebecee !important;
+    margin-top: 5px;
+    padding-left: 5px !important;
+}
+
+.add-responsibility:focus {
+    outline: none;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-btn {
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-btn:focus {
+    border: 2px solid rgb(52, 116, 111) !important;
 }

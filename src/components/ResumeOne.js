@@ -3,6 +3,8 @@ import "./ResumeOne.css";
 
 class ResumeOne extends Component {
   state = {
+    addNewEploymentToggle: false,
+    addNewEducationToggle: false,
     name: "THOMAS THOMPSON",
     title: "SOFTWARE ENGINEER",
     email: "email@tomsquared.co",
@@ -14,56 +16,61 @@ class ResumeOne extends Component {
       "Specializing in advanced computer vision topics such as facial recognition and full-body motion-tracking. Seeking work in the Boston area with exciting research and applications.",
     employment: [
       {
-        time: "Jun 2012 to Current",
+        id: 1,
+        workingPeriod: "Jun 2012 to Current",
         company: "Corespace Sciences",
         title: "Software Engineer",
         city: "Boston, MA",
         responsibilityOne:
           "* Designed and implemented new version of Corespace's full-body motion-tracking software.",
         responsibilityTwo:
-          "* Work resulted in a 25% increase in accuracy and 15% increase in speed over the existing version."
+          "* Work resulted in a 25% increase in accuracy and 15% increase in speed over the existing version.",
+        period: "Jun 2012 to Current"
       },
       {
-        time: "Jun 2010 to Apr 2012",
+        id: 2,
+        workingPeriod: "Jun 2010 to Apr 2012",
         company: "Emotional.ly",
         title: "Computer Vision Engineer",
         city: "New York, NY",
         responsibilityOne:
           "* Specialized in applying emotion recognition and classification algorithms to video frames towards Emotional.ly's new video-based emotion-recognition product.",
         responsibilityTwo:
-          "* Assisted with modeling and converting data into formats for input into neural networks."
+          "* Assisted with modeling and converting data into formats for input into neural networks.",
+        period: "Jun 2010 to Apr 2012"
       },
       {
-        time: "Jun 2009 to Aug 2009",
+        id: 3,
+        workingPeriod: "Jun 2009 to Aug 2009",
         company: "Emotional.ly",
         title: "Software Engineer Intern",
         city: "New York, NY",
         responsibilityOne:
           "* Expanded Emotional.ly's emotion recognition algorithms to support six additional emotion classifications.",
         responsibilityTwo:
-          "* Compressed data storage modal resulting in a 25% size reduction without data loss."
+          "* Compressed data storage modal resulting in a 25% size reduction without data loss.",
+        period: "Jun 2009 to Aug 2009"
       },
       {
-        time: "May 2008 to Dec 2008",
+        id: 4,
+        workingPeriod: "May 2008 to Dec 2008",
         company: "Code:all Foundation",
         title: "Python Course Planner",
         city: "Remote",
         responsibilityOne:
           "* Created three 10-lesson interactive courses for teaching Python and data structures to middle and high school students through Code:all's website.",
         responsibilityTwo:
-          "* Taught several live workshops for Code:all students."
+          "* Taught several live workshops for Code:all students.",
+        period: "May 2008 to Dec 2008"
       }
     ],
-    education: {
-      year: "2010",
-      college: "Rochester Institute of Technology",
-      title: "B.S.Computer Science",
-      minor: "Minor: Applied Mathematics"
-    },
-    skills: {
-      languages: "C++, HTML, Java, JavaScript, Python, Ruby",
-      platforms: "Android, Django, jQuery, Matlab, OpenCV"
-    },
+
+    educationYear: "2010",
+    educationCollege: "Rochester Institute of Technology",
+    educationTitle: "B.S.Computer Science",
+    educationMinor: "Minor: Applied Mathematics",
+    skillsLanguages: "C++, HTML, Java, JavaScript, Python, Ruby",
+    skillsPlatforms: "Android, Django, jQuery, Matlab, OpenCV",
     projects: [
       {
         name: "Intersect Image Sorter",
@@ -92,15 +99,15 @@ class ResumeOne extends Component {
   handleOnChangeInfo = e => {
     let value = e.target.value;
     let name = e.target.name;
-    console.log(name, value);
     let newState = { ...this.state, [name]: value };
     this.setState(newState);
     localStorage.setItem("resumeOne", JSON.stringify(newState));
   };
 
-  changeInputEmployment = (e, i) => {
+  handlechangeInputEmployment = (e, i) => {
     let value = e.target.value;
     let name = e.target.name;
+    console.log(value, name);
     let newState = {
       ...this.state,
       employment: this.state.employment.map((item, index) => {
@@ -116,6 +123,36 @@ class ResumeOne extends Component {
     this.setState(newState);
     localStorage.setItem("resumeOne", JSON.stringify(newState));
   };
+
+  handlechangeInputProjects = (e, i) => {
+    let value = e.target.value;
+    let name = e.target.name;
+    let newState = {
+      ...this.state,
+      projects: this.state.projects.map((item, index) => {
+        if (index === i) {
+          return {
+            ...item,
+            [name]: value
+          };
+        }
+        return item;
+      })
+    };
+    this.setState(newState);
+    localStorage.setItem("resumeOne", JSON.stringify(newState));
+  };
+
+  handleToggle(name) {
+    this.setState(prevState => {
+      return { ...prevState, [name]: !prevState[name] };
+    });
+  }
+
+  handleAddNewEmployment(e) {
+    e.preventDefault();
+    console.log(e.target.time);
+  }
 
   render() {
     return (
@@ -197,206 +234,214 @@ class ResumeOne extends Component {
             {/* EMPLOYMENT */}
             <div className="summary-container">
               <h4 className="subtitle">EMPLOYMENT</h4>
-              <div className="employment-container-section row">
-                <div className="col-md-3">
-                  <input
-                    className="eployment-time "
-                    value={this.state.employment[0].time}
-                    name="time"
-                    onChange={e => this.changeInputEmployment(e, 0)}
-                  />
-                </div>
-                <div className="col-md-9">
-                  <input
-                    className="company"
-                    value={this.state.employment[0].company}
-                    name="company"
-                    onChange={e => this.changeInputEmployment(e, 0)}
-                  />
-                  <input
-                    className="title"
-                    value={this.state.employment[0].title}
-                    name="title"
-                    onChange={e => this.changeInputEmployment(e, 0)}
-                  />
-                  <input
-                    className="city"
-                    value={this.state.employment[0].city}
-                    name="city"
-                    onChange={e => this.changeInputEmployment(e, 0)}
-                  />
-                  <br />
-                  <textarea
-                    rows="1"
-                    name="responsibilityOne"
-                    onChange={e => this.changeInputEmployment(e, 0)}
-                    value={this.state.employment[0].responsibilityOne}
-                  />
-                  <textarea
-                    rows="1"
-                    name="responsibilityTwo"
-                    onChange={e => this.changeInputEmployment(e, 0)}
-                    value={this.state.employment[0].responsibilityTwo}
-                  />
-                </div>
-              </div>
+              <button
+                className="btn-add-new-eployment"
+                onClick={() => this.handleToggle("addNewEploymentToggle")}
+              >
+                Add New Eployment
+              </button>
 
-              {/* two */}
+              {this.state.addNewEploymentToggle && (
+                <form onSubmit={e => this.handleAddNewEmployment(e)}>
+                  <div className="row">
+                    <div className="col-md-3">
+                      <input
+                        className="add-time"
+                        name="time"
+                        placeholder="Working period"
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <input
+                        className="add-company"
+                        name="company"
+                        placeholder="Company"
+                      />
+                      <input
+                        className="add-title"
+                        name="title"
+                        placeholder="Title"
+                      />
+                      <input
+                        className="add-city"
+                        name="city"
+                        placeholder="City"
+                      />
+                      <br />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityOne"
+                        placeholder="Responsibility"
+                      />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityTwo"
+                        placeholder="Responsibility"
+                      />
+                      <input
+                        className="btn add-btn"
+                        type="submit"
+                        value="Add"
+                      />
+                    </div>
+                  </div>
+                </form>
+              )}
 
-              <div className="employment-container-section row">
-                <div className="col-md-3">
-                  <input
-                    className="eployment-time"
-                    value={this.state.employment[1].time}
-                    name="time"
-                    onChange={e => this.changeInputEmployment(e, 1)}
-                  />
-                </div>
-                <div className="col-md-9">
-                  <input
-                    className="company"
-                    value={this.state.employment[1].company}
-                    name="company"
-                    onChange={e => this.changeInputEmployment(e, 1)}
-                  />
-                  <input
-                    className="title"
-                    value={this.state.employment[1].title}
-                    name="title"
-                    onChange={e => this.changeInputEmployment(e, 1)}
-                  />
-                  <input
-                    className="city"
-                    value={this.state.employment[1].city}
-                    name="city"
-                    onChange={e => this.changeInputEmployment(e, 1)}
-                  />
-                  <br />
-                  <textarea
-                    rows="2"
-                    name="responsibilityOne"
-                    onChange={e => this.changeInputEmployment(e, 1)}
-                    value={this.state.employment[1].responsibilityOne}
-                  />
-                  <textarea
-                    rows="1"
-                    name="responsibilityTwo"
-                    onChange={e => this.changeInputEmployment(e, 1)}
-                    value={this.state.employment[1].responsibilityTwo}
-                  />
-                </div>
-              </div>
-              {/* Three */}
+              {this.state.employment.map((employer, index) => {
+                return (
+                  <div
+                    key={employer.workingPeriod}
+                    className="employment-container-section row"
+                  >
+                    <div className="col-md-3">
+                      {/* <input
+                        className="eployment-time"
+                        value={employer.workingPeriod}
+                        key={employer.workingPeriod}
+                        name="workingPeriod"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                      /> */}
 
-              <div className="employment-container-section row">
-                <div className="col-md-3">
-                  <input
-                    className="eployment-time"
-                    value={this.state.employment[2].time}
-                    name="time"
-                    onChange={e => this.changeInputEmployment(e, 2)}
-                  />
-                </div>
-                <div className="col-md-9">
-                  <input
-                    className="company"
-                    value={this.state.employment[2].company}
-                    name="company"
-                    onChange={e => this.changeInputEmployment(e, 2)}
-                  />
-                  <input
-                    className="title"
-                    value={this.state.employment[2].title}
-                    name="title"
-                    onChange={this.handleOnChangeThreeEployment}
-                  />
-                  <input
-                    className="city"
-                    value={this.state.employment[2].city}
-                    name="city"
-                    onChange={e => this.changeInputEmployment(e, 2)}
-                  />
-                  <br />
-                  <textarea
-                    rows="2"
-                    name="responsibilityOne"
-                    onChange={e => this.changeInputEmployment(e, 2)}
-                    value={this.state.employment[2].responsibilityOne}
-                  />
-                  <textarea
-                    rows="1"
-                    name="responsibilityTwo"
-                    onChange={e => this.changeInputEmployment(e, 2)}
-                    value={this.state.employment[2].responsibilityTwo}
-                  />
-                </div>
-              </div>
-              {/* Four */}
-
-              <div className="employment-container-section row">
-                <div className="col-md-3">
-                  <input
-                    className="eployment-time "
-                    value={this.state.employment[3].time}
-                    name="time"
-                    onChange={e => this.changeInputEmployment(e, 3)}
-                  />
-                </div>
-                <div className="col-md-9">
-                  <input
-                    className="company"
-                    value={this.state.employment[3].company}
-                    name="company"
-                    onChange={e => this.changeInputEmployment(e, 3)}
-                  />
-                  <input
-                    className="title"
-                    value={this.state.employment[3].title}
-                    name="title"
-                    onChange={e => this.changeInputEmployment(e, 3)}
-                  />
-                  <input
-                    className="city"
-                    value={this.state.employment[3].city}
-                    name="city"
-                    onChange={e => this.changeInputEmployment(e, 3)}
-                  />
-                  <br />
-                  <textarea
-                    rows="2"
-                    name="responsibilityOne"
-                    onChange={e => this.changeInputEmployment(e, 3)}
-                    value={this.state.employment[3].responsibilityOne}
-                  />
-                  <textarea
-                    rows="1"
-                    name="responsibilityTwo"
-                    onChange={e => this.changeInputEmployment(e, 3)}
-                    value={this.state.employment[3].responsibilityTwo}
-                  />
-                </div>
-              </div>
-              {/* end */}
+                      <input
+                        className="eployment-time"
+                        value={employer.period}
+                        name="period"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <input
+                        className="company"
+                        value={employer.company}
+                        name="company"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                      />
+                      <input
+                        className="title"
+                        value={employer.title}
+                        name="title"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                      />
+                      <input
+                        className="city"
+                        value={employer.city}
+                        name="city"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                      />
+                      <br />
+                      <textarea
+                        rows="1"
+                        name="responsibilityOne"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                        value={employer.responsibilityOne}
+                      />
+                      <textarea
+                        rows="1"
+                        name="responsibilityTwo"
+                        onChange={e =>
+                          this.handlechangeInputEmployment(e, index)
+                        }
+                        value={employer.responsibilityTwo}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             {/* EDUCATION */}
             <div className="summary-container">
               <h4 className="subtitle">EDUCATION</h4>
 
+              <button
+                className="btn-add-new-eployment"
+                onClick={() => this.handleToggle("addNewEducationToggle")}
+              >
+                Add New Education
+              </button>
+
+              {this.state.addNewEducationToggle && (
+                <form>
+                  <div className="row">
+                    <div className="col-md-3">
+                      <input
+                        className="add-time"
+                        name="educationYear"
+                        placeholder="Year Finished"
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <input
+                        className="add-company"
+                        style={{ width: "100%" }}
+                        name="educationCollege"
+                        placeholder="Name of School"
+                      />
+                      <input
+                        className="add-title"
+                        style={{ width: "100%" }}
+                        name="educationMinor"
+                        placeholder="Degree"
+                      />
+                      <input
+                        className="add-title"
+                        style={{ width: "100%" }}
+                        name="educationMinor"
+                        placeholder="Degree"
+                      />
+                      <input
+                        className="btn add-btn"
+                        type="submit"
+                        value="Add"
+                      />
+                    </div>
+                  </div>
+                </form>
+              )}
+
               <div className="employment-container-section row">
                 <div className="col-md-3">
                   <input
                     className="eployment-time "
-                    value={this.state.education.year}
+                    value={this.state.educationYear}
+                    name="educationYear"
+                    onChange={this.handleOnChangeInfo}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="college"
-                    value={this.state.education.college}
+                    value={this.state.educationCollege}
+                    name="educationCollege"
+                    onChange={this.handleOnChangeInfo}
                   />
                   <br />
-                  <input className="title" value={this.state.education.title} />
-                  <input className="minor" value={this.state.education.minor} />
+                  <input
+                    className="title-education"
+                    value={this.state.educationTitle}
+                    name="educationTitle"
+                    onChange={this.handleOnChangeInfo}
+                  />
+                  <input
+                    className="minor"
+                    value={this.state.educationMinor}
+                    name="educationMinor"
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </div>
               </div>
             </div>
@@ -414,11 +459,15 @@ class ResumeOne extends Component {
                 <div className="col-md-9">
                   <input
                     className="languages"
-                    value={this.state.skills.languages}
+                    value={this.state.skillsLanguages}
+                    name="skillsLanguages"
+                    onChange={this.handleOnChangeInfo}
                   />
                   <input
                     className="platforms"
-                    value={this.state.skills.platforms}
+                    value={this.state.skillsPlatforms}
+                    name="skillsPlatforms"
+                    onChange={this.handleOnChangeInfo}
                   />
                 </div>
               </div>
@@ -427,23 +476,80 @@ class ResumeOne extends Component {
             <div className="summary-container">
               <h4 className="subtitle">PROJECT</h4>
 
+              <button
+                className="btn-add-new-eployment"
+                onClick={() => this.handleToggle("addNewProjectToggle")}
+              >
+                Add New Project
+              </button>
+
+              {this.state.addNewProjectToggle && (
+                <form onSubmit={e => this.handleAddNewEmployment(e)}>
+                  <div className="row">
+                    <div className="col-md-3">
+                      <input
+                        className="add-time"
+                        name="time"
+                        placeholder="Project Name"
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityOne"
+                        placeholder="Responsibility"
+                      />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityTwo"
+                        placeholder="Responsibility"
+                      />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityThree"
+                        placeholder="Responsibility"
+                      />
+                      <input
+                        className="btn add-btn"
+                        type="submit"
+                        value="Add"
+                      />
+                    </div>
+                  </div>
+                </form>
+              )}
+
               <div className="employment-container-section row">
                 <div className="col-md-3">
                   <input
                     className="eployment-time"
                     value={this.state.projects[0].name}
+                    name="name"
+                    onChange={e => this.handlechangeInputProjects(e, 0)}
                   />
                 </div>
                 <div className="col-md-9 projects-responsibility">
-                  <textarea rows="1">
-                    {this.state.projects[0].responsibilityOne}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.projects[0].responsibilityTwo}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.projects[0].responsibilityThree}
-                  </textarea>
+                  <textarea
+                    rows="1"
+                    value={this.state.projects[0].responsibilityOne}
+                    name="responsibilityOne"
+                    onChange={e => this.handlechangeInputProjects(e, 0)}
+                  />
+                  <textarea
+                    rows="1"
+                    value={this.state.projects[0].responsibilityTwo}
+                    name="responsibilityTwo"
+                    onChange={e => this.handlechangeInputProjects(e, 0)}
+                  />
+                  <textarea
+                    rows="1"
+                    value={this.state.projects[0].responsibilityThree}
+                    name="responsibilityThree"
+                    onChange={e => this.handlechangeInputProjects(e, 0)}
+                  />
                 </div>
               </div>
 
@@ -452,18 +558,23 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time"
                     value={this.state.projects[1].name}
+                    name="name"
+                    onChange={e => this.handlechangeInputProjects(e, 1)}
                   />
                 </div>
                 <div className="col-md-9 projects-responsibility">
-                  <textarea rows="1">
-                    {this.state.projects[1].responsibilityOne}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.projects[1].responsibilityTwo}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.projects[1].responsibilityThree}
-                  </textarea>
+                  <textarea
+                    rows="1"
+                    value={this.state.projects[1].responsibilityTwo}
+                    name="responsibilityTwo"
+                    onChange={e => this.handlechangeInputProjects(e, 1)}
+                  />
+                  <textarea
+                    rows="1"
+                    value={this.state.projects[1].responsibilityThree}
+                    name="responsibilityThree"
+                    onChange={e => this.handlechangeInputProjects(e, 1)}
+                  />
                 </div>
               </div>
             </div>
