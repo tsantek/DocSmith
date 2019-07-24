@@ -140,6 +140,11 @@ class ResumeOne extends Component {
     });
   }
 
+  handleAddNewEmployment(e) {
+    e.preventDefault();
+    console.log(e.target.time);
+  }
+
   render() {
     console.log(this.state);
     return (
@@ -229,47 +234,48 @@ class ResumeOne extends Component {
               </button>
 
               {this.state.addNewEploymentToggle && (
-                <form>
+                <form onSubmit={e => this.handleAddNewEmployment(e)}>
                   <div className="row">
                     <div className="col-md-3">
                       <input
-                        style={{ border: "1px solid gray" }}
-                        className="eployment-time "
+                        className="add-time"
                         name="time"
                         placeholder="Working period"
                       />
                     </div>
                     <div className="col-md-9">
                       <input
-                        style={{ border: "1px solid gray" }}
-                        className="company"
+                        className="add-company"
                         name="company"
                         placeholder="Company"
                       />
                       <input
-                        style={{ border: "1px solid gray" }}
-                        className="title"
+                        className="add-title"
                         name="title"
                         placeholder="Title"
                       />
                       <input
-                        style={{ border: "1px solid gray" }}
-                        className="city"
+                        className="add-city"
                         name="city"
                         placeholder="City"
                       />
                       <br />
                       <textarea
-                        style={{ border: "1px solid gray" }}
-                        rows="1"
+                        className="add-responsibility"
+                        rows="2"
                         name="responsibilityOne"
                         placeholder="Responsibility"
                       />
                       <textarea
-                        rows="1"
-                        style={{ border: "1px solid gray" }}
+                        className="add-responsibility"
+                        rows="2"
                         name="responsibilityTwo"
                         placeholder="Responsibility"
+                      />
+                      <input
+                        className="btn add-btn"
+                        type="submit"
+                        value="Add"
                       />
                     </div>
                   </div>
