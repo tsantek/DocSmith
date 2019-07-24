@@ -1,0 +1,86 @@
+    .bodyStyle {
+        background-color: #242e34;
+        color: white
+    }
+    
+    .resume {
+        margin-top: 25px;
+        height: 1112px;
+        background-color: white;
+    }
+    
+    .resumeHeader {
+        background-color: #8ca4d4;
+        height: 140px;
+    }
+    
+    .row-header {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .inputStyle {
+        color: white;
+        /* float: right; */
+    }
+    
+    .inputStyleTitle {
+        color: white;
+        border: none;
+        background-color: #8ca4d4;
+        float: right;
+        margin-top: 50px;
+        font-size: 30px;
+        width: 100%;
+        text-align: right
+    }
+    
+    .inputName {
+        background-color: #8ca4d4;
+        border: none;
+        color: white;
+        font-size: 50px;
+        /* float: right */
+    }
+    
+    .inputStyleName {
+        color: white;
+        float: right;
+        margin-top: 24px;
+        border: none;
+        width: 100%;
+        background-color: #8ca4d4;
+        text-align: right
+    }
+    
+    .linksSocialUl {
+        display: flex;
+        align-content: flex-start;
+        list-style: none;
+    }
+    
+    .linksSocialUl li {
+        padding-right: 5px
+    }
+    
+    .linksSocialUl li input {
+        width: 100%;
+        background-color: #8ca4d4;
+        border: none;
+    }
+    
+    .summary-container {
+        padding: 30px;
+        color: black;
+    }
+    
+    .summary-container h4 {
+        padding: 5px 20px;
+        background-color: #ebecee;
+        color: #8ca4d4;
+    }
+    
+    .summary-container textarea {
+        padding: 10px;
+        width: 100%;
+    }

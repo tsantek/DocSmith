@@ -1,5 +1,6 @@
 // Resumes PAGE / Component
 import React from "react";
+import { Link } from "react-router-dom";
 
 import imgOne from "./ResumesImg/1.png";
 import imgTwo from "./ResumesImg/2.png";
@@ -55,7 +56,9 @@ const Resumes = props => {
                 Lorem Ipsum.
               </p>
               <button style={btnStyle} className="btn btn-primary">
-                TRY
+                <Link style={{ color: "white" }} to="one" resume={1}>
+                  TRY
+                </Link>
               </button>
             </div>
             <div className="col-md-6" style={imgContainer}>
