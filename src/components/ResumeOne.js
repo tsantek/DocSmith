@@ -362,43 +362,33 @@ class ResumeOne extends Component {
               </button>
 
               {this.state.addNewEducationToggle && (
-                <form onSubmit={e => this.handleAddNewEmployment(e)}>
+                <form>
                   <div className="row">
                     <div className="col-md-3">
                       <input
                         className="add-time"
-                        name="time"
-                        placeholder="Working period"
+                        name="educationYear"
+                        placeholder="Year Finished"
                       />
                     </div>
                     <div className="col-md-9">
                       <input
                         className="add-company"
-                        name="company"
-                        placeholder="Company"
+                        style={{ width: "100%" }}
+                        name="educationCollege"
+                        placeholder="Name of School"
                       />
                       <input
                         className="add-title"
-                        name="title"
-                        placeholder="Title"
+                        style={{ width: "100%" }}
+                        name="educationMinor"
+                        placeholder="Degree"
                       />
                       <input
-                        className="add-city"
-                        name="city"
-                        placeholder="City"
-                      />
-                      <br />
-                      <textarea
-                        className="add-responsibility"
-                        rows="2"
-                        name="responsibilityOne"
-                        placeholder="Responsibility"
-                      />
-                      <textarea
-                        className="add-responsibility"
-                        rows="2"
-                        name="responsibilityTwo"
-                        placeholder="Responsibility"
+                        className="add-title"
+                        style={{ width: "100%" }}
+                        name="educationMinor"
+                        placeholder="Degree"
                       />
                       <input
                         className="btn add-btn"

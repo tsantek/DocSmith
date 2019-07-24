@@ -226,6 +226,7 @@ form {
 }
 
 .add-btn {
+    margin-top: 5px;
     border-radius: 8px;
     border: 2px solid rgb(52, 116, 111) !important;
 }
