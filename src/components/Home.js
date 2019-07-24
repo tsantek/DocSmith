@@ -4,6 +4,9 @@ import React, { Component } from "react";
 import '../customStyles/home.css'
 import Logo from '../docsmithlogo.png'
 import FooterLogo from '../docsmithlogo-w.png'
+import imgOne from "./ResumesImg/1.png";
+import imgTwo from "./ResumesImg/2.png";
+import imgThree from "./ResumesImg/3.png";
 // import { Link } from "react-router-dom";
 import { Navbar, NavbarBrand, Nav, NavItem, Button, Jumbotron, ButtonGroup, Container } from 'reactstrap';
 
@@ -54,21 +57,21 @@ class Home extends Component {
                 <span>Modern</span>
                 <i className="fa fa-search-plus"></i>
               </div>
-              <img src="http://creddle.io/images/edsall.png" alt="resume" />
+              <img src="imgOne" alt="resume" />
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Funtional</span>
                 <i className="fa fa-search-plus"></i>
               </div>
-              <img src="http://creddle.io/images/bristol.png" alt="resume" />
+              <img src="imgTwo" alt="resume" />
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Simple</span>
                 <i className="fa fa-search-plus"></i>
               </div>
-              <img src="http://creddle.io/images/zurich.png" alt="resume" />
+              <img src="imgThree" alt="resume" />
             </div>
           </div>
         </Container>
