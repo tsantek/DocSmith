@@ -1,0 +1,83 @@
+.navbar img, .footer img {
+    width: 10em;
+}
+.navbar .signin {
+    color: #fff;
+    background: #6cb;
+    border-color: #6cb;
+}
+.navbar .signin:hover {
+    color: #6cb;
+    background: none;
+    border-color: #6cb;
+}
+.navbar .signup:hover {
+    color: #fff;
+    background: #6cb;
+    border-color: #6cb;
+}
+.navbar .signup:active {
+ outline: none;
+}
+.navbar .signup {
+    color: #6cb;
+    background: none;
+    border-color: #6cb;
+}
+
+.jumbotron {
+    background-image: linear-gradient(to bottom right, #233, #6cb);
+    color: #fff;
+    text-align: center;
+}
+.jumbotron p {
+    width: 70%;
+    margin: auto;
+}
+.jumbotron button {
+    color: #fff;
+    background: none;
+    border-color: #6cb;
+}
+.jumbotron button:hover {
+    background: #6cb;
+    border-color: #6cb;
+}
+.jumbotron small {
+    display: block;
+    font-size: .6em;
+}
+.jumbotron .line_separator {
+    margin: 2rem auto;
+    height: .5rem;
+    width: 7rem;
+    background-color: #1DBFAF;
+}
+
+.graphic_wrapper img {
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
+}
+
+.graphic_caption {
+    border-bottom: .05em solid #1DBFAF;
+    margin-bottom: .8em;
+    font-weight: 600;
+    color: #34746f;
+    padding: .2em 0;
+}
+.graphic_caption i:hover {
+    font-weight: 800;
+    color: #1DBFAF;
+    cursor: pointer;
+}
+
+.footer_brand {
+    background-color: #34746f;
+    text-align: center;
+}
+.footer img {
+    width: 5em;
+}
