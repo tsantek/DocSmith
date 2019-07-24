@@ -62,13 +62,13 @@ const Resumes = props => {
               </button>
             </div>
             <div className="col-md-6" style={imgContainer}>
-              <img style={imgStyle} src={imgOne} />
+              <img style={imgStyle} src={imgOne} alt="resume" />
             </div>
           </div>
           {/* SECTION 2 */}
           <div className="row" style={rowStyle}>
             <div className="col-md-6" style={imgContainer}>
-              <img style={imgStyle} src={imgTwo} />
+              <img style={imgStyle} src={imgTwo} alt="resume" />
             </div>
             <div className="col-md-6">
               <h4>Lorem Ipsum Header</h4>
@@ -111,7 +111,7 @@ const Resumes = props => {
               </button>
             </div>
             <div className="col-md-6" style={imgContainer}>
-              <img style={imgStyle} src={imgThree} />
+              <img style={imgStyle} src={imgThree} alt="resume" />
             </div>
           </div>
         </div>
