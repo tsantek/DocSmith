@@ -1,26 +1,39 @@
 // Resumes PAGE / Component
+import React from "react";
+
 import imgOne from "./ResumesImg/1.png";
 import imgTwo from "./ResumesImg/2.png";
 import imgThree from "./ResumesImg/3.png";
-
-import React from "react";
 
 const imgStyle = {
   height: "400px"
 };
 
 const rowStyle = {
-  paddingBottom: "20px"
+  borderBottom: "1px solid #34746f",
+  padding: "40px"
 };
 
 const btnStyle = {
-  float: "right"
+  float: "right",
+  backgroundColor: "#34746f",
+  borderColor: "#34746f"
+};
+
+const imgContainer = {
+  textAlign: "center"
+};
+
+const bodyStyle = {
+  backgroundColor: "#242e34",
+  color: "white"
 };
 
 const Resumes = props => {
   return (
-    <React.Fragment>
+    <div style={bodyStyle}>
       <header>
+        {/* TODO */}
         <p>HEADER</p>
       </header>
       <main>
@@ -45,12 +58,15 @@ const Resumes = props => {
                 TRY
               </button>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={imgContainer}>
               <img style={imgStyle} src={imgOne} />
             </div>
           </div>
           {/* SECTION 2 */}
           <div className="row" style={rowStyle}>
+            <div className="col-md-6" style={imgContainer}>
+              <img style={imgStyle} src={imgTwo} />
+            </div>
             <div className="col-md-6">
               <h4>Lorem Ipsum Header</h4>
               <p>
@@ -68,9 +84,6 @@ const Resumes = props => {
               <button style={btnStyle} className="btn btn-primary">
                 TRY
               </button>
-            </div>
-            <div className="col-md-6">
-              <img style={imgStyle} src={imgTwo} />
             </div>
           </div>
           {/* SECTION 3 */}
@@ -94,13 +107,13 @@ const Resumes = props => {
                 TRY
               </button>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={imgContainer}>
               <img style={imgStyle} src={imgThree} />
             </div>
           </div>
         </div>
       </main>
-    </React.Fragment>
+    </div>
   );
 };
 
