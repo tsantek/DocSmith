@@ -225,4 +225,11 @@ form {
     border: 2px solid rgb(52, 116, 111) !important;
 }
 
-.add-btn {}
+.add-btn {
+    border-radius: 8px;
+    border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.add-btn:focus {
+    border: 2px solid rgb(52, 116, 111) !important;
+}

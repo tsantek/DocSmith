@@ -4,8 +4,9 @@ import "./ResumeOne.css";
 class ResumeOne extends Component {
   state = {
     addNewEploymentToggle: false,
+    addNewEducationToggle: false,
     name: "THOMAS THOMPSON",
-    title: "SOFTWARE ENGINEER",
+    workingPeriod: "SOFTWARE ENGINEER",
     email: "email@tomsquared.co",
     web: "tomsquared.co",
     phone: "555-248-0950",
@@ -15,6 +16,7 @@ class ResumeOne extends Component {
       "Specializing in advanced computer vision topics such as facial recognition and full-body motion-tracking. Seeking work in the Boston area with exciting research and applications.",
     employment: [
       {
+        id: 1,
         time: "Jun 2012 to Current",
         company: "Corespace Sciences",
         title: "Software Engineer",
@@ -25,6 +27,7 @@ class ResumeOne extends Component {
           "* Work resulted in a 25% increase in accuracy and 15% increase in speed over the existing version."
       },
       {
+        id: 2,
         time: "Jun 2010 to Apr 2012",
         company: "Emotional.ly",
         title: "Computer Vision Engineer",
@@ -35,6 +38,7 @@ class ResumeOne extends Component {
           "* Assisted with modeling and converting data into formats for input into neural networks."
       },
       {
+        id: 3,
         time: "Jun 2009 to Aug 2009",
         company: "Emotional.ly",
         title: "Software Engineer Intern",
@@ -45,6 +49,7 @@ class ResumeOne extends Component {
           "* Compressed data storage modal resulting in a 25% size reduction without data loss."
       },
       {
+        id: 4,
         time: "May 2008 to Dec 2008",
         company: "Code:all Foundation",
         title: "Python Course Planner",
@@ -291,8 +296,8 @@ class ResumeOne extends Component {
                     <div className="col-md-3">
                       <input
                         className="eployment-time "
-                        value={employer.time}
-                        name="time"
+                        value={employer.workingPeriod}
+                        name="workingPeriod"
                         onChange={e =>
                           this.handlechangeInputEmployment(e, index)
                         }
@@ -348,6 +353,62 @@ class ResumeOne extends Component {
             {/* EDUCATION */}
             <div className="summary-container">
               <h4 className="subtitle">EDUCATION</h4>
+
+              <button
+                className="btn-add-new-eployment"
+                onClick={() => this.handleToggle("addNewEducationToggle")}
+              >
+                Add New Education
+              </button>
+
+              {this.state.addNewEducationToggle && (
+                <form onSubmit={e => this.handleAddNewEmployment(e)}>
+                  <div className="row">
+                    <div className="col-md-3">
+                      <input
+                        className="add-time"
+                        name="time"
+                        placeholder="Working period"
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <input
+                        className="add-company"
+                        name="company"
+                        placeholder="Company"
+                      />
+                      <input
+                        className="add-title"
+                        name="title"
+                        placeholder="Title"
+                      />
+                      <input
+                        className="add-city"
+                        name="city"
+                        placeholder="City"
+                      />
+                      <br />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityOne"
+                        placeholder="Responsibility"
+                      />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityTwo"
+                        placeholder="Responsibility"
+                      />
+                      <input
+                        className="btn add-btn"
+                        type="submit"
+                        value="Add"
+                      />
+                    </div>
+                  </div>
+                </form>
+              )}
 
               <div className="employment-container-section row">
                 <div className="col-md-3">
