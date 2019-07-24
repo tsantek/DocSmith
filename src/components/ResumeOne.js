@@ -95,7 +95,6 @@ class ResumeOne extends Component {
   handleOnChangeInfo = e => {
     let value = e.target.value;
     let name = e.target.name;
-    console.log(name, value);
     let newState = { ...this.state, [name]: value };
     this.setState(newState);
     localStorage.setItem("resumeOne", JSON.stringify(newState));
@@ -151,7 +150,6 @@ class ResumeOne extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="bodyStyle">
         <div className="container" style={{ paddingBottom: "40px" }}>
@@ -462,6 +460,52 @@ class ResumeOne extends Component {
             {/* PROJECTS */}
             <div className="summary-container">
               <h4 className="subtitle">PROJECT</h4>
+
+              <button
+                className="btn-add-new-eployment"
+                onClick={() => this.handleToggle("addNewProjectToggle")}
+              >
+                Add New Project
+              </button>
+
+              {this.state.addNewProjectToggle && (
+                <form onSubmit={e => this.handleAddNewEmployment(e)}>
+                  <div className="row">
+                    <div className="col-md-3">
+                      <input
+                        className="add-time"
+                        name="time"
+                        placeholder="Project Name"
+                      />
+                    </div>
+                    <div className="col-md-9">
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityOne"
+                        placeholder="Responsibility"
+                      />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityTwo"
+                        placeholder="Responsibility"
+                      />
+                      <textarea
+                        className="add-responsibility"
+                        rows="2"
+                        name="responsibilityThree"
+                        placeholder="Responsibility"
+                      />
+                      <input
+                        className="btn add-btn"
+                        type="submit"
+                        value="Add"
+                      />
+                    </div>
+                  </div>
+                </form>
+              )}
 
               <div className="employment-container-section row">
                 <div className="col-md-3">
