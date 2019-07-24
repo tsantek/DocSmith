@@ -6,7 +6,7 @@ class ResumeOne extends Component {
     name: "THOMAS THOMPSON",
     title: "SOFTWARE ENGINEER",
     email: "email@tomsquared.co",
-    web: " tomsquared.co",
+    web: "tomsquared.co",
     phone: "555-248-0950",
     twitter: "@tomtothetwo",
     github: "tstomsquared",
@@ -18,40 +18,40 @@ class ResumeOne extends Component {
         company: "Corespace Sciences",
         title: "Software Engineer",
         city: "Boston, MA",
-        responsibility: [
+        responsibilityOne:
           "* Designed and implemented new version of Corespace's full-body motion-tracking software.",
+        responsibilityTwo:
           "* Work resulted in a 25% increase in accuracy and 15% increase in speed over the existing version."
-        ]
       },
       {
         time: "Jun 2010 to Apr 2012",
         company: "Emotional.ly",
         title: "Computer Vision Engineer",
         city: "New York, NY",
-        responsibility: [
+        responsibilityOne:
           "* Specialized in applying emotion recognition and classification algorithms to video frames towards Emotional.ly's new video-based emotion-recognition product.",
+        responsibilityTwo:
           "* Assisted with modeling and converting data into formats for input into neural networks."
-        ]
       },
       {
         time: "Jun 2009 to Aug 2009",
         company: "Emotional.ly",
         title: "Software Engineer Intern",
         city: "New York, NY",
-        responsibility: [
+        responsibilityOne:
           "* Expanded Emotional.ly's emotion recognition algorithms to support six additional emotion classifications.",
+        responsibilityTwo:
           "* Compressed data storage modal resulting in a 25% size reduction without data loss."
-        ]
       },
       {
         time: "May 2008 to Dec 2008",
         company: "Code:all Foundation",
         title: "Python Course Planner",
         city: "Remote",
-        responsibility: [
+        responsibilityOne:
           "* Created three 10-lesson interactive courses for teaching Python and data structures to middle and high school students through Code:all's website.",
+        responsibilityTwo:
           "* Taught several live workshops for Code:all students."
-        ]
       }
     ],
     education: {
@@ -67,22 +67,56 @@ class ResumeOne extends Component {
     projects: [
       {
         name: "Intersect Image Sorter",
-        responsibility: [
+        responsibilityOne:
           "* Developed an web-based automatic image categorizer and sorter based on various image properties.",
+        responsibilityTwo:
           "* Applied basic computer vision techniques for sorting",
-          "* Created web stack using Django."
-        ]
+        responsibilityThree: "* Created web stack using Django."
       },
       {
         name: "DatHat Android App",
-        responsibility: [
+        responsibilityOne:
           "* Co-wrote an Android app enabling users to sending pictures of themselves wearing various cartoon hats.",
+        responsibilityTwo:
           "* Specialized in applying facial recognition techniques to automatically place hats properly in the images.",
-          "* Won 1st place in school club Android hackathon."
-        ]
+        responsibilityThree: "* Won 1st place in school club Android hackathon."
       }
     ]
   };
+
+  componentWillMount() {
+    var getObject = JSON.parse(localStorage.getItem("resumeOne"));
+    this.setState(getObject);
+  }
+
+  handleOnChangeInfo = e => {
+    let value = e.target.value;
+    let name = e.target.name;
+    console.log(name, value);
+    let newState = { ...this.state, [name]: value };
+    this.setState(newState);
+    localStorage.setItem("resumeOne", JSON.stringify(newState));
+  };
+
+  changeInputEmployment = (e, i) => {
+    let value = e.target.value;
+    let name = e.target.name;
+    let newState = {
+      ...this.state,
+      employment: this.state.employment.map((item, index) => {
+        if (index === i) {
+          return {
+            ...item,
+            [name]: value
+          };
+        }
+        return item;
+      })
+    };
+    this.setState(newState);
+    localStorage.setItem("resumeOne", JSON.stringify(newState));
+  };
+
   render() {
     return (
       <div className="bodyStyle">
@@ -96,34 +130,69 @@ class ResumeOne extends Component {
                 style={{ marginRight: "0px", marginLeft: "0px" }}
               >
                 <div className="col-md-6 inputName">
-                  <input className="inputStyleName" value={this.state.name} />
+                  <input
+                    name="name"
+                    className="inputStyleName"
+                    value={this.state.name}
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </div>
                 <div className="col-md-6 inputStyle">
-                  <input className="inputStyleTitle" value={this.state.title} />
+                  <input
+                    className="inputStyleTitle"
+                    name="title"
+                    value={this.state.title}
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </div>
               </div>
               <ul className="linksSocialUl">
                 <li>
-                  <input value={this.state.email} />
+                  <input
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </li>
                 <li>
-                  <input value={this.state.phone} />
+                  <input
+                    value={this.state.phone}
+                    name="phone"
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </li>
                 <li>
-                  <input value={this.state.twitter} />
+                  <input
+                    value={this.state.twitter}
+                    name="twitter"
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </li>
                 <li>
-                  <input value={this.state.web} />
+                  <input
+                    value={this.state.web}
+                    name="web"
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </li>
                 <li>
-                  <input value={this.state.github} />
+                  <input
+                    value={this.state.github}
+                    name="github"
+                    onChange={this.handleOnChangeInfo}
+                  />
                 </li>
               </ul>
             </div>
             {/* SUMMARY  */}
             <div className="summary-container">
               <h4 className="subtitle">SUMMARY</h4>
-              <textarea rows="2">{this.state.summary}</textarea>
+              <textarea
+                rows="2"
+                name="summary"
+                onChange={this.handleOnChangeInfo}
+                value={this.state.summary}
+              />
             </div>
             {/* EMPLOYMENT */}
             <div className="summary-container">
@@ -133,28 +202,42 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time "
                     value={this.state.employment[0].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[0].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[0].title}
+                    name="title"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                   <input
                     className="city"
                     value={this.state.employment[0].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 0)}
                   />
                   <br />
-                  <textarea rows="1">
-                    {this.state.employment[0].responsibility[0]}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[0].responsibility[1]}
-                  </textarea>
+                  <textarea
+                    rows="1"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 0)}
+                    value={this.state.employment[0].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 0)}
+                    value={this.state.employment[0].responsibilityTwo}
+                  />
                 </div>
               </div>
 
@@ -165,28 +248,42 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time"
                     value={this.state.employment[1].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[1].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[1].title}
+                    name="title"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                   <input
                     className="city"
                     value={this.state.employment[1].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 1)}
                   />
                   <br />
-                  <textarea rows="2">
-                    {this.state.employment[1].responsibility[0]}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[1].responsibility[1]}
-                  </textarea>
+                  <textarea
+                    rows="2"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 1)}
+                    value={this.state.employment[1].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 1)}
+                    value={this.state.employment[1].responsibilityTwo}
+                  />
                 </div>
               </div>
               {/* Three */}
@@ -194,30 +291,44 @@ class ResumeOne extends Component {
               <div className="employment-container-section row">
                 <div className="col-md-3">
                   <input
-                    className="eployment-time "
+                    className="eployment-time"
                     value={this.state.employment[2].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 2)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[2].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 2)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[2].title}
+                    name="title"
+                    onChange={this.handleOnChangeThreeEployment}
                   />
                   <input
                     className="city"
                     value={this.state.employment[2].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 2)}
                   />
                   <br />
-                  <textarea rows="2">
-                    {this.state.employment[2].responsibility[0]}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[2].responsibility[1]}
-                  </textarea>
+                  <textarea
+                    rows="2"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 2)}
+                    value={this.state.employment[2].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 2)}
+                    value={this.state.employment[2].responsibilityTwo}
+                  />
                 </div>
               </div>
               {/* Four */}
@@ -227,28 +338,42 @@ class ResumeOne extends Component {
                   <input
                     className="eployment-time "
                     value={this.state.employment[3].time}
+                    name="time"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                 </div>
                 <div className="col-md-9">
                   <input
                     className="company"
                     value={this.state.employment[3].company}
+                    name="company"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                   <input
                     className="title"
                     value={this.state.employment[3].title}
+                    name="title"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                   <input
                     className="city"
                     value={this.state.employment[3].city}
+                    name="city"
+                    onChange={e => this.changeInputEmployment(e, 3)}
                   />
                   <br />
-                  <textarea rows="2">
-                    {this.state.employment[3].responsibility[0]}
-                  </textarea>
-                  <textarea rows="1">
-                    {this.state.employment[3].responsibility[1]}
-                  </textarea>
+                  <textarea
+                    rows="2"
+                    name="responsibilityOne"
+                    onChange={e => this.changeInputEmployment(e, 3)}
+                    value={this.state.employment[3].responsibilityOne}
+                  />
+                  <textarea
+                    rows="1"
+                    name="responsibilityTwo"
+                    onChange={e => this.changeInputEmployment(e, 3)}
+                    value={this.state.employment[3].responsibilityTwo}
+                  />
                 </div>
               </div>
               {/* end */}
@@ -311,13 +436,13 @@ class ResumeOne extends Component {
                 </div>
                 <div className="col-md-9 projects-responsibility">
                   <textarea rows="1">
-                    {this.state.projects[0].responsibility[0]}
+                    {this.state.projects[0].responsibilityOne}
                   </textarea>
                   <textarea rows="1">
-                    {this.state.projects[0].responsibility[1]}
+                    {this.state.projects[0].responsibilityTwo}
                   </textarea>
                   <textarea rows="1">
-                    {this.state.projects[0].responsibility[2]}
+                    {this.state.projects[0].responsibilityThree}
                   </textarea>
                 </div>
               </div>
@@ -331,13 +456,13 @@ class ResumeOne extends Component {
                 </div>
                 <div className="col-md-9 projects-responsibility">
                   <textarea rows="1">
-                    {this.state.projects[1].responsibility[0]}
+                    {this.state.projects[1].responsibilityOne}
                   </textarea>
                   <textarea rows="1">
-                    {this.state.projects[1].responsibility[1]}
+                    {this.state.projects[1].responsibilityTwo}
                   </textarea>
                   <textarea rows="1">
-                    {this.state.projects[1].responsibility[2]}
+                    {this.state.projects[1].responsibilityThree}
                   </textarea>
                 </div>
               </div>

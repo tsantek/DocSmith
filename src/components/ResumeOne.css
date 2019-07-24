@@ -63,7 +63,8 @@ textarea {
 }
 
 .linksSocialUl li {
-    padding-right: 5px
+    padding-right: 5px;
+    width: 200px;
 }
 
 .linksSocialUl li input {
