@@ -2,7 +2,7 @@ import React from 'react'
 import imgOne from "./CoverLetterImg/1.jpg";
 import imgTwo from "./CoverLetterImg/2.jpg";
 import imgThree from "./CoverLetterImg/3.jpg";
-import { Container, Button } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 const coverLetterGraphics = () => {
     return (
@@ -11,26 +11,26 @@ const coverLetterGraphics = () => {
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Funtional</span>
-                <i className="fa fa-search-plus"></i>
               </div>
-              <img src={imgTwo} alt="resume" />
-              <Button href="/CoverLetterOne" className="edit_action mt-2" size="sm" color="dark">Try</Button>
+              <a href="/CoverLetterOne">
+                <img src={imgTwo} alt="resume" />
+              </a>
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Modern</span>
-                <i className="fa fa-search-plus"></i>
               </div>
-              <img src={imgOne} alt="resume" />
-              <Button className="edit_action mt-2" size="sm" color="dark">Try</Button>
+              <a href="/CoverLetterOne">
+                <img src={imgOne} alt="resume" />
+              </a>              
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Simple</span>
-                <i className="fa fa-search-plus"></i>
               </div>
-              <img src={imgThree} alt="resume" />
-              <Button className="edit_action mt-2" size="sm" color="dark">Try</Button>
+              <a href="/CoverLetterOne">
+                <img src={imgThree} alt="resume" />
+              </a>                  
             </div>
           </div>
         </Container>

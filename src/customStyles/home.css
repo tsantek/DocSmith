@@ -27,8 +27,9 @@
 
 .jumbotron {
     background-image: linear-gradient(to bottom right, #233, #6cb);
-    color: #fff;
+    position: relative;
     text-align: center;
+    color: #fff;
 }
 .jumbotron p {
     width: 70%;
@@ -53,16 +54,31 @@
     width: 7rem;
     background-color: #1DBFAF;
 }
+.jumbotron .pickatemplate {
+    background-color: #1DBFAF;
+    border-bottom-right-radius: .3em;
+    border-bottom-left-radius: .3em;
+    padding: .5em 1.5em;
+    position: relative;
+    font-weight: 600;
+    bottom: -6.5em;
+    margin: auto;
+    width: 11em;
+}
 
 .graphic_wrapper img {
-    width: 100%;
     -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
     -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
     box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
+    width: 100%;
 }
+/* .graphic_wrapper:hover, 
+.graphic_wrapper:focus {
+    box-shadow: inset 6.5em 0 0 0 var(--hover);
+} */
 .graphic_caption {
     border-bottom: .05em solid #1DBFAF;
-    margin-bottom: .8em;
+    margin: 2em 0 .8em 0;
     font-weight: 600;
     color: #34746f;
     padding: .2em 0;
