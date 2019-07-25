@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ResumeOne.css";
-
+import Footer from "./Footer";
 class ResumeOne extends Component {
   state = {
     proUser: false,
@@ -262,8 +262,8 @@ class ResumeOne extends Component {
     localStorage.setItem("resumeOne", JSON.stringify(this.state));
     return (
       <div className="bodyStyle">
+        <Footer />
         <div className="container" style={{ paddingBottom: "40px" }}>
-          <header>HEADER</header>
           <div className="resume">
             {/* RESUME HEADER */}
             <div className="resumeHeader">
