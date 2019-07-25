@@ -107,7 +107,6 @@ class ResumeOne extends Component {
   handlechangeInputEmployment = (e, i) => {
     let value = e.target.value;
     let name = e.target.name;
-    console.log(value, name);
     let newState = {
       ...this.state,
       employment: this.state.employment.map((item, index) => {
