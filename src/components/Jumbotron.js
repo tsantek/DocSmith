@@ -25,6 +25,7 @@ const jumbotron = ({ state, resumeToggle, coverLetterToggle }) => {
               <small>All levels of experience</small>
             </Button>
           </ButtonGroup>
+          <div className="pickatemplate">Pick a Template</div>
         </Jumbotron>
     )
 }

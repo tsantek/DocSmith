@@ -12,7 +12,7 @@
 .letter textarea {
     text-align: justify;
     background: none;
-    color: #444;
+    color: #666;
     width: 100%;
 }
 .letter input:focus, 
@@ -35,7 +35,7 @@
 
 .body {
     border-left: .01em solid #eee;
-    padding: 6em 5em 18em 2em;
+    padding: 4em 5em 6em 2em;
     height: 100%;
     width: 70%;
 }
