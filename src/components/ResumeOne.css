@@ -117,9 +117,10 @@ textarea {
 }
 
 .city {
-    width: 200px !important;
+    width: 170px !important;
     text-align: right;
     float: right;
+    margin-top: 10px;
 }
 
 .college {
