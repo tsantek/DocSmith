@@ -68,7 +68,8 @@ textarea {
 }
 
 .linksSocialUl li input {
-    width: 100%;
+    padding-left: 5px;
+    width: 80%;
     background-color: #8ca4d4;
     border: none;
 }
