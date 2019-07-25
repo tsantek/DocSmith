@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./ResumeOne.css";
+<<<<<<< HEAD
 import Footer from './Footer'
 
+=======
+import Footer from "./Footer";
+>>>>>>> master
 class ResumeOne extends Component {
   state = {
     proUser: false,
@@ -10,7 +14,7 @@ class ResumeOne extends Component {
     addNewProjectToggle: false,
     name: "THOMAS THOMPSON",
     title: "SOFTWARE ENGINEER",
-    email: "email@tomsquared.co",
+    email: "email@info.co",
     web: "tomsquared.co",
     phone: "555-248-0950",
     twitter: "@tomtothetwo",
@@ -92,9 +96,9 @@ class ResumeOne extends Component {
         id: 2,
         name: "DatHat Android App",
         responsibilityOne:
-          "* Co-wrote an Android app enabling users to sending pictures of themselves wearing various cartoon hats.",
+          "* Co-wrote an Android app enabling users to sending pictures of themselves.",
         responsibilityTwo:
-          "* Specialized in applying facial recognition techniques to automatically place hats properly in the images.",
+          "* Specialized in applying facial recognition techniques to the images.",
         responsibilityThree: "* Won 1st place in school club Android hackathon."
       }
     ]
@@ -263,7 +267,9 @@ class ResumeOne extends Component {
     localStorage.setItem("resumeOne", JSON.stringify(this.state));
     return (
       <div className="bodyStyle">
-      <Footer />
+        <div className="header-footer">
+          <Footer />
+        </div>
         <div className="container" style={{ paddingBottom: "40px" }}>
           <div className="resume">
             {/* RESUME HEADER */}
@@ -291,6 +297,7 @@ class ResumeOne extends Component {
               </div>
               <ul className="linksSocialUl">
                 <li>
+                  <i className="fa fa-envelope-open" aria-hidden="true" />
                   <input
                     name="email"
                     value={this.state.email}
@@ -298,6 +305,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-phone" aria-hidden="true" />
                   <input
                     value={this.state.phone}
                     name="phone"
@@ -305,6 +313,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-twitter" aria-hidden="true" />
                   <input
                     value={this.state.twitter}
                     name="twitter"
@@ -312,6 +321,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-chrome" aria-hidden="true" />
                   <input
                     value={this.state.web}
                     name="web"
@@ -319,6 +329,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-github" aria-hidden="true" />
                   <input
                     value={this.state.github}
                     name="github"
@@ -449,7 +460,7 @@ class ResumeOne extends Component {
                       />
                       <br />
                       <textarea
-                        rows="1"
+                        rows="2"
                         name="responsibilityOne"
                         onChange={e =>
                           this.handlechangeInputEmployment(e, index)
@@ -457,7 +468,7 @@ class ResumeOne extends Component {
                         value={employer.responsibilityOne}
                       />
                       <textarea
-                        rows="1"
+                        rows="2"
                         name="responsibilityTwo"
                         onChange={e =>
                           this.handlechangeInputEmployment(e, index)

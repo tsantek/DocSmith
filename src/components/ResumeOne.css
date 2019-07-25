@@ -63,12 +63,13 @@ textarea {
 }
 
 .linksSocialUl li {
-    padding-right: 5px;
+    padding-left: 30px;
     width: 200px;
 }
 
 .linksSocialUl li input {
-    width: 100%;
+    padding-left: 5px;
+    width: 80%;
     background-color: #8ca4d4;
     border: none;
 }
@@ -270,5 +271,11 @@ form {
     }
     .container {
         max-width: 100%;
+    }
+    .close-btn {
+        display: none;
+    }
+    .header-footer {
+        display: none;
     }
 }
