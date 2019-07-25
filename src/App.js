@@ -7,6 +7,7 @@ import Home from "./components/Home";
 // import CoverLetters from "./components/CoverLetters";
 import ResumeOne from "./components/ResumeOne";
 import CoverLetterOne from "./components/CoverLetterOne";
+import RegistrationAndSignUp from "./components/RegistrationAndSignUp";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         {/* <Route path="/resumes" component={Resumes} /> */}
         <Route path="/CoverLetterOne" component={CoverLetterOne} />
+        <Route path="/RegistrationAndSignUp" component={RegistrationAndSignUp} />
         <Route path="/one" component={ResumeOne} />
         {/* <Route path="/coverletters" component={CoverLetters} /> */}
       </div>

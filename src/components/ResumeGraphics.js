@@ -12,19 +12,19 @@ const resumeGraphics = () => {
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Modern</span>
               </div>
-              <a href="/one" alt="resume"><img src={imgOne} alt="resume" /></a>
+              <a href="/one" alt="resume"><img className="graphic" src={imgOne} alt="resume" /></a>
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Functional</span>
               </div>
-              <a href="/one" alt="resume"><img src={imgTwo} alt="resume" /></a>
+              <a href="/one" alt="resume"><img className="graphic" src={imgTwo} alt="resume" /></a>
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
                 <span>Simple</span>
               </div>
-              <a href="/one" alt="resume"><img src={imgThree} alt="resume" /></a>
+              <a href="/one" alt="resume"><img className="graphic" src={imgThree} alt="resume" /></a>
             </div>
           </div>
         </Container>
