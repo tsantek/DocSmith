@@ -117,9 +117,10 @@ textarea {
 }
 
 .city {
-    width: 200px !important;
+    width: 170px !important;
     text-align: right;
     float: right;
+    margin-top: 10px;
 }
 
 .college {
@@ -233,6 +234,20 @@ form {
 
 .add-btn:focus {
     border: 2px solid rgb(52, 116, 111) !important;
+}
+
+.close-btn {
+    position: absolute;
+    z-index: 1;
+    padding: 3px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(52, 116, 111);
+    font-weight: bold;
+    font-size: 10px;
+    width: 20px;
+    margin-left: 15px;
+    margin-top: -20px;
 }
 
 @media print {
