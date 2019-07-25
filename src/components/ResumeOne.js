@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import "./ResumeOne.css";
+<<<<<<< HEAD
+import Footer from './Footer'
+
+=======
 import Footer from "./Footer";
+>>>>>>> master
 class ResumeOne extends Component {
   state = {
     proUser: false,

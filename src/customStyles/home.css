@@ -67,15 +67,14 @@
 }
 
 .graphic_wrapper img {
-    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
-    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
-    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.17);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 500ms;
     width: 100%;
 }
-/* .graphic_wrapper:hover, 
-.graphic_wrapper:focus {
-    box-shadow: inset 6.5em 0 0 0 var(--hover);
-} */
+.graphic_wrapper img:hover, 
+.graphic_wrapper img:focus {
+    box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
+}
 .graphic_caption {
     border-bottom: .05em solid #1DBFAF;
     margin: 2em 0 .8em 0;
