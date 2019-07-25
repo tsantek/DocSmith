@@ -63,7 +63,7 @@ textarea {
 }
 
 .linksSocialUl li {
-    padding-right: 5px;
+    padding-left: 30px;
     width: 200px;
 }
 
@@ -271,5 +271,11 @@ form {
     }
     .container {
         max-width: 100%;
+    }
+    .close-btn {
+        display: none;
+    }
+    .header-footer {
+        display: none;
     }
 }
