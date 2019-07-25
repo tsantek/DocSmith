@@ -17,7 +17,7 @@ const resumeGraphics = () => {
             </div>
             <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
               <div className="graphic_caption d-flex justify-content-between">
-                <span>Funtional</span>
+                <span>Functional</span>
               </div>
               <img src={imgTwo} alt="resume" />
               <Button className="edit_action mt-2" size="sm" color="dark">Try</Button>
