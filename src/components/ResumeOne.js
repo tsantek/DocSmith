@@ -9,7 +9,7 @@ class ResumeOne extends Component {
     addNewProjectToggle: false,
     name: "THOMAS THOMPSON",
     title: "SOFTWARE ENGINEER",
-    email: "email@tomsquared.co",
+    email: "email@info.co",
     web: "tomsquared.co",
     phone: "555-248-0950",
     twitter: "@tomtothetwo",
@@ -290,6 +290,7 @@ class ResumeOne extends Component {
               </div>
               <ul className="linksSocialUl">
                 <li>
+                  <i className="fa fa-envelope-open" aria-hidden="true" />
                   <input
                     name="email"
                     value={this.state.email}
@@ -297,6 +298,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-phone" aria-hidden="true" />
                   <input
                     value={this.state.phone}
                     name="phone"
@@ -304,6 +306,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-twitter" aria-hidden="true" />
                   <input
                     value={this.state.twitter}
                     name="twitter"
@@ -311,6 +314,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-chrome" aria-hidden="true" />
                   <input
                     value={this.state.web}
                     name="web"
@@ -318,6 +322,7 @@ class ResumeOne extends Component {
                   />
                 </li>
                 <li>
+                  <i className="fa fa-github" aria-hidden="true" />
                   <input
                     value={this.state.github}
                     name="github"
