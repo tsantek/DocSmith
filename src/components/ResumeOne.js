@@ -214,7 +214,6 @@ class ResumeOne extends Component {
 
   handleAddNewProject(e) {
     e.preventDefault();
-    console.log(e.target);
     const newProject = {
       id: Math.random(),
       name: e.target.name.value,
@@ -657,7 +656,10 @@ class ResumeOne extends Component {
 
               {this.state.projects.map((project, index) => {
                 return (
-                  <div className="employment-container-section row">
+                  <div
+                    key={project.id}
+                    className="employment-container-section row"
+                  >
                     <div className="col-md-3">
                       <input
                         className="eployment-time"
