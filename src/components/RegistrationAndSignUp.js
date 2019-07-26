@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Footer from "./Footer";
+import "../customStyles/RegistrationAndSignUp.css";
 
 export default class RegistrationAndSignUp extends Component {
   state = {
@@ -22,58 +23,102 @@ export default class RegistrationAndSignUp extends Component {
       pro: e.target.pro.checked,
       logedin: true
     };
-
-    if (e.target.pro.checked) {
-      localStorage.setItem("proUser", JSON.stringify(user));
+    let storage = [];
+    if (localStorage.getItem("user")) {
+      storage = JSON.parse(localStorage.getItem("user"));
+      let newArr = storage.concat(user);
+      localStorage.setItem("user", JSON.stringify(newArr));
     } else {
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify([user]));
     }
+    this.props.history.push("/");
   };
 
   render() {
     return (
       <div>
         <Footer />
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <div className="container mt-5">
-            <div className="form-group">
-              <input
-                className="form-control"
-                placeholder="Name"
-                type="text"
-                name="name"
-                id="name"
-              />
+        <div className="main">
+          <div className="container form_wrapper bg-light">
+            <div className="row signin">
+              <form className="col-7">
+                <h3 className="my-5">Sign In</h3>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    id="password"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="action btn btn-dark btn-block"
+                    type="submit"
+                    value="Sign In"
+                  />
+                </div>
+              </form>
+              <div className="col">ddd</div>
             </div>
-            <div className="form-group">
-              <input
-                className="form-control"
-                placeholder="Email"
-                type="email"
-                name="email"
-                id="email"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="form-control"
-                placeholder="Password"
-                type="password"
-                name="password"
-                id="password"
-              />
-            </div>
-            <div className="form-group">
-              <label className="mr-1" htmlFor="pro">
-                Pro
-              </label>
-              <input type="checkbox" name="pro" id="pro" />
-            </div>
-            <div className="form-group">
-              <input className="form-control" type="submit" value="SignIn" />
+            <div className="row register">
+              <form className="col-7" onSubmit={e => this.handleSubmit(e)}>
+                <h3 className="my-5">Sign Up</h3>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    id="name"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="form-control"
+                    placeholder="Password"
+                    type="password"
+                    name="password"
+                    id="password"
+                  />
+                </div>
+                <div className="form-group">
+                  <label className="mr-1" htmlFor="pro">
+                    Pro
+                  </label>
+                  <input type="checkbox" name="pro" id="pro" />
+                </div>
+                <div className="form-group">
+                  <input
+                    className="action btn btn-dark btn-block"
+                    type="submit"
+                    value="Sign Up"
+                  />
+                </div>
+              </form>
+              <div className="col-3">ddd</div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     );
   }

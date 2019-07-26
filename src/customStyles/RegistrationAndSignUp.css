@@ -1,0 +1,21 @@
+.main {
+  /* height: 100vh;
+  padding: 3em 0; */
+}
+
+.form_wrapper {
+  outline: 0.01em solid #666;
+  width: 40% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 2em !important;
+}
+.form_wrapper .signin {
+  outline: 0.01em solid #666;
+  margin-bottom: 4em;
+}
+.form_wrapper .register {
+  outline: 0.01em solid #666;
+}
