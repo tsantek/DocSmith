@@ -54,7 +54,12 @@ export default class RegistrationAndSignUp extends Component {
 
   render() {
     return (
-      <div>
+      <div
+        style={{
+          backgroundImage: "linear-gradient(to bottom right,#233,#6cb)",
+          height: "100vh"
+        }}
+      >
         <Footer />
         <div className="main">
           <div className="container form_wrapper bg-light">
