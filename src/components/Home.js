@@ -4,8 +4,7 @@ import Navbar from "./PageNavigation";
 import Jumbotron from "./Jumbotron";
 import Resume from "./ResumeGraphics";
 import CoverLetter from "./CoverLetterGraphics";
-import Footer from "./Footer";
-
+import FooterHome from "./FooterHome";
 // import { Link } from "react-router-dom";
 
 class Home extends Component {
@@ -63,7 +62,7 @@ class Home extends Component {
         ) : (
           <CoverLetter user={this.state.user} />
         )}
-        <Footer />
+        <FooterHome />
       </div>
     );
   }
