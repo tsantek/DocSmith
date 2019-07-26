@@ -19,7 +19,6 @@ const navbar = props => {
               color="dark"
             >
               Sign In
-              <i className="fa fa-sign-in" aria-hidden="true" />
             </Button>
           </NavItem>
         ) : (
