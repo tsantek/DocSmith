@@ -56,8 +56,7 @@ export default class RegistrationAndSignUp extends Component {
     return (
       <div
         style={{
-          backgroundImage: "linear-gradient(to bottom right,#233,#6cb)",
-          height: "100vh"
+          backgroundImage: "linear-gradient(to bottom right,#233,#6cb)"
         }}
       >
         <Footer />
