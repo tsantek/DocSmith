@@ -74,23 +74,23 @@ export default class RegistrationAndSignUp extends Component {
                 <hr />
                 <ul>
                   <li className="d-flex mb-2">
-                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <i className="mr-2 fa fa-check" aria-hidden="true" />
                     <small>Sign in</small>
                   </li>
                   <li className="d-flex mb-2">
-                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <i className="mr-2 fa fa-check" aria-hidden="true" />
                     <small>
                       Select a template from our library of professional designs
                     </small>
                   </li>
                   <li className="d-flex mb-2">
-                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <i className="mr-2 fa fa-check" aria-hidden="true" />
                     <small>
                       Build your resume with our industry-specific bullet points
                     </small>
                   </li>
                   <li className="d-flex mb-2">
-                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <i className="mr-2 fa fa-check" aria-hidden="true" />
                     <small>
                       Download your resume, print it out and get it ready to
                       send!
