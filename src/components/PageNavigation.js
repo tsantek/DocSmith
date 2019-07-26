@@ -23,6 +23,8 @@ const navbar = props => {
           </NavItem>
         ) : (
           <NavItem>
+            <span style={{ color: "#6cb" }}>Hi,</span>
+            {props.user[0].name}
             <Button
               onClick={() => props.handleLogOut()}
               size="sm"

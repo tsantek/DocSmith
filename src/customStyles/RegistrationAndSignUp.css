@@ -1,39 +1,50 @@
 body,
 html {
+<<<<<<< HEAD
   height: 100%;
+=======
+    height: 100vh;
+>>>>>>> e589e8ce6dcd4ba6896da9093558be4722ca1b2d
 }
+
 .main {
-  background-image: linear-gradient(to bottom right, #233, #6cb);
-  height: 100vh;
-  position: relative;
+    padding: 2em !important;
+    /* background-image: linear-gradient(to bottom right, #233, #6cb); */
+    min-height: 96vh;
 }
 
 .form_wrapper form {
-  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
-  -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
-  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
-  transition: box-shadow 500ms;
-  border-radius: 0.2em !important;
-  background: #fff;
-  position: relative;
-  left: -2em;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+    transition: box-shadow 500ms;
+    border-radius: 0.2em !important;
+    background: #fff;
+    /* color: #377; */
+    position: relative;
+    left: -2em;
 }
+
 .form_wrapper [type="submit"] {
-  background: #377;
-  font-weight: 700;
-  border: none;
+    background: #377;
+    font-weight: 700;
+    border: none;
 }
+
 .form_wrapper ul i,
 .form_wrapper h5,
 .form_wrapper h3 {
-  color: #377;
-  border: none;
+    color: #377;
+    border: none;
 }
+
 .form_wrapper form:hover,
 .form_wrapper form:focus {
-  box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
 }
+
 .form_wrapper {
+<<<<<<< HEAD
   margin-top: 4em;
   position: relative;
   -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
@@ -42,7 +53,17 @@ html {
   border-radius: 0.2em !important;
   width: 40% !important;
   padding: 1em 2em !important;
+=======
+    position: relative;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+    border-radius: 0.2em !important;
+    width: 40% !important;
+    padding: 1em 2em !important;
+>>>>>>> e589e8ce6dcd4ba6896da9093558be4722ca1b2d
 }
+
 .form_wrapper .signin {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
