@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Footer from "./Footer";
+import FooterHome from "./FooterHome";
 import "../customStyles/RegistrationAndSignUp.css";
 
 export default class RegistrationAndSignUp extends Component {
@@ -59,7 +59,7 @@ export default class RegistrationAndSignUp extends Component {
           backgroundImage: "linear-gradient(to bottom right,#233,#6cb)"
         }}
       >
-        <Footer />
+        <FooterHome />
         <div className="main">
           <div className="container form_wrapper bg-light">
             <div className="row signin">
