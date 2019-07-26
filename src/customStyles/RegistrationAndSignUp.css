@@ -1,10 +1,6 @@
 body,
 html {
-<<<<<<< HEAD
-  height: 100%;
-=======
     height: 100vh;
->>>>>>> e589e8ce6dcd4ba6896da9093558be4722ca1b2d
 }
 
 .main {
