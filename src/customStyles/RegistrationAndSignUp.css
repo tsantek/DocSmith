@@ -1,10 +1,11 @@
 body,
 html {
-  height: 100vh;
+  height: 100%;
 }
 .main {
-  padding: 2em !important;
   background-image: linear-gradient(to bottom right, #233, #6cb);
+  height: 100vh;
+  position: relative;
 }
 
 .form_wrapper form {
@@ -14,7 +15,6 @@ html {
   transition: box-shadow 500ms;
   border-radius: 0.2em !important;
   background: #fff;
-  /* color: #377; */
   position: relative;
   left: -2em;
 }
@@ -34,6 +34,7 @@ html {
   box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
 }
 .form_wrapper {
+  margin-top: 4em;
   position: relative;
   -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
   -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);

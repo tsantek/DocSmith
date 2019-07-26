@@ -55,8 +55,8 @@ export default class RegistrationAndSignUp extends Component {
   render() {
     return (
       <div>
-        <Footer />
         <div className="main">
+          <Footer />
           <div className="container form_wrapper bg-light">
             <div className="row signin">
               <form className="col-7" onSubmit={e => this.handleLogIn(e)}>
