@@ -26,7 +26,7 @@ const resumeGraphics = props => {
           <div className="graphic_caption d-flex justify-content-between">
             <span>Functional</span>
           </div>
-          <a href="/one" alt="resume">
+          <a href="/" alt="resume">
             <img className="graphic" src={imgTwo} alt="resume" />
           </a>
         </div>
@@ -34,7 +34,7 @@ const resumeGraphics = props => {
           <div className="graphic_caption d-flex justify-content-between">
             <span>Simple</span>
           </div>
-          <a href="/one" alt="resume">
+          <a href="/" alt="resume">
             <img className="graphic" src={imgThree} alt="resume" />
           </a>
         </div>
