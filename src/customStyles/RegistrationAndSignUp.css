@@ -1,21 +1,47 @@
+body,
+html {
+  height: 100vh;
+}
 .main {
-  /* height: 100vh;
-  padding: 3em 0; */
+  padding: 2em !important;
+  background-image: linear-gradient(to bottom right, #233, #6cb);
 }
 
+.form_wrapper form {
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+  transition: box-shadow 500ms;
+  border-radius: 0.2em !important;
+  background: #fff;
+  /* color: #377; */
+  position: relative;
+  left: -2em;
+}
+.form_wrapper [type="submit"] {
+  background: #377;
+  font-weight: 700;
+  border: none;
+}
+.form_wrapper ul i,
+.form_wrapper h5,
+.form_wrapper h3 {
+  color: #377;
+  border: none;
+}
+.form_wrapper form:hover,
+.form_wrapper form:focus {
+  box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.5);
+}
 .form_wrapper {
-  outline: 0.01em solid #666;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.17);
+  border-radius: 0.2em !important;
   width: 40% !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding: 0 2em !important;
+  padding: 1em 2em !important;
 }
 .form_wrapper .signin {
-  outline: 0.01em solid #666;
-  margin-bottom: 4em;
-}
-.form_wrapper .register {
-  outline: 0.01em solid #666;
+  margin-bottom: 1em;
 }
