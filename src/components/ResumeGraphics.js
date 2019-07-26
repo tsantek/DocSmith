@@ -5,7 +5,6 @@ import imgThree from "./ResumesImg/3.png";
 import { Container } from "reactstrap";
 
 const resumeGraphics = props => {
-  console.log(props);
   return (
     <Container className="graphic_wrapper my-5">
       <div className="row">
@@ -13,7 +12,7 @@ const resumeGraphics = props => {
           <div className="graphic_caption d-flex justify-content-between">
             <span>Modern</span>
           </div>
-          {props.loggedIn ? (
+          {props.user.length > 0 ? (
             <a href="/one" alt="resume">
               <img className="graphic" src={imgOne} alt="resume" />
             </a>

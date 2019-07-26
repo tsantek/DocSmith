@@ -4,7 +4,7 @@ import imgTwo from "./CoverLetterImg/2.jpg";
 import imgThree from "./CoverLetterImg/3.jpg";
 import { Container } from "reactstrap";
 
-const coverLetterGraphics = () => {
+const coverLetterGraphics = props => {
   return (
     <Container className="graphic_wrapper my-5">
       <div className="row">
@@ -12,9 +12,15 @@ const coverLetterGraphics = () => {
           <div className="graphic_caption d-flex justify-content-between">
             <span>Funtional</span>
           </div>
-          <a href="/CoverLetterOne">
-            <img src={imgTwo} alt="resume" />
-          </a>
+          {props.user.length === 0 ? (
+            <a href="/RegistrationAndSignUp">
+              <img src={imgTwo} alt="resume" />
+            </a>
+          ) : (
+            <a href="/CoverLetterOne">
+              <img src={imgTwo} alt="resume" />
+            </a>
+          )}
         </div>
         <div className="col-md col-sm-6 mb-3 p-0 mx-3 graphics">
           <div className="graphic_caption d-flex justify-content-between">
