@@ -61,15 +61,43 @@ export default class RegistrationAndSignUp extends Component {
                     id="password"
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group action">
                   <input
-                    className="action btn btn-dark btn-block"
+                    className="btn btn-dark btn-block"
                     type="submit"
                     value="Sign In"
                   />
                 </div>
               </form>
-              <div className="col">ddd</div>
+              <div className="col">
+                <h5>How it works</h5>
+                <hr />
+                <ul>
+                  <li className="d-flex mb-2">
+                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <small>Sign in</small>
+                  </li>
+                  <li className="d-flex mb-2">
+                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <small>
+                      Select a template from our library of professional designs
+                    </small>
+                  </li>
+                  <li className="d-flex mb-2">
+                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <small>
+                      Build your resume with our industry-specific bullet points
+                    </small>
+                  </li>
+                  <li className="d-flex mb-2">
+                    <i class="mr-2 fa fa-check" aria-hidden="true" />
+                    <small>
+                      Download your resume, print it out and get it ready to
+                      send!
+                    </small>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div className="row register">
               <form className="col-7" onSubmit={e => this.handleSubmit(e)}>
@@ -107,15 +135,21 @@ export default class RegistrationAndSignUp extends Component {
                   </label>
                   <input type="checkbox" name="pro" id="pro" />
                 </div>
-                <div className="form-group">
+                <div className="form-group action">
                   <input
-                    className="action btn btn-dark btn-block"
+                    className="btn btn-dark btn-block"
                     type="submit"
                     value="Sign Up"
                   />
                 </div>
               </form>
-              <div className="col-3">ddd</div>
+              <div className="col">
+                <h5>Don't have an acount</h5>
+                <hr />
+                <small>
+                  Create your free acount today, and take Docsimth for a spin!
+                </small>
+              </div>
             </div>
           </div>
         </div>
