@@ -26,7 +26,7 @@ const coverLetterGraphics = props => {
           <div className="graphic_caption d-flex justify-content-between">
             <span>Modern</span>
           </div>
-          <a href="/CoverLetterOne">
+          <a href="/">
             <img src={imgOne} alt="resume" />
           </a>
         </div>
@@ -34,7 +34,7 @@ const coverLetterGraphics = props => {
           <div className="graphic_caption d-flex justify-content-between">
             <span>Simple</span>
           </div>
-          <a href="/CoverLetterOne">
+          <a href="/">
             <img src={imgThree} alt="resume" />
           </a>
         </div>
