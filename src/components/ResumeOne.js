@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./ResumeOne.css";
 import Footer from "./Footer";
-
 class ResumeOne extends Component {
   state = {
     proUser: false,
