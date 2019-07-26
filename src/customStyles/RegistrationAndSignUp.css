@@ -6,6 +6,7 @@ html {
 .main {
     padding: 2em !important;
     /* background-image: linear-gradient(to bottom right, #233, #6cb); */
+    min-height: 96vh;
 }
 
 .form_wrapper form {
