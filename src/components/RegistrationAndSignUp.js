@@ -34,6 +34,24 @@ export default class RegistrationAndSignUp extends Component {
     this.props.history.push("/");
   };
 
+  handleLogIn = e => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    let storage = JSON.parse(localStorage.getItem("user"));
+    const user = storage.map(user => {
+      if (user.email === email) {
+        return {
+          ...user,
+          logedin: true
+        };
+      }
+      return user;
+    });
+    localStorage.setItem("user", JSON.stringify(user));
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div>
@@ -41,7 +59,7 @@ export default class RegistrationAndSignUp extends Component {
         <div className="main">
           <div className="container form_wrapper bg-light">
             <div className="row signin">
-              <form className="col-7">
+              <form className="col-7" onSubmit={e => this.handleLogIn(e)}>
                 <h3 className="my-5">Sign In</h3>
                 <div className="form-group">
                   <input

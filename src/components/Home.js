@@ -12,14 +12,15 @@ class Home extends Component {
   state = {
     resume: true,
     jumbotronH3: "",
-    jumbotronPrg: ""
+    jumbotronPrg: "",
+    user: []
   };
 
   componentWillMount() {
     if (localStorage.getItem("user")) {
       var getObject = JSON.parse(localStorage.getItem("user"));
       this.setState({
-        loggedIn: getObject.logedin
+        user: getObject.filter(user => user.logedin)
       });
     }
   }
@@ -33,29 +34,34 @@ class Home extends Component {
 
   handleLogOut = () => {
     var getObject = JSON.parse(localStorage.getItem("user"));
-    getObject.logedin = false;
-    localStorage.setItem("user", JSON.stringify(getObject));
+    let newObject = getObject.map(user => {
+      if (user.logedin === true) {
+        return {
+          ...user,
+          logedin: false
+        };
+      }
+      return user;
+    });
+    localStorage.setItem("user", JSON.stringify(newObject));
     this.setState({
-      loggedIn: false
+      user: []
     });
   };
 
   render() {
     return (
       <div>
-        <Navbar
-          loggedIn={this.state.loggedIn}
-          handleLogOut={this.handleLogOut}
-        />
+        <Navbar user={this.state.user} handleLogOut={this.handleLogOut} />
         <Jumbotron
           coverLetterToggle={this.coverLetterToggle}
           resumeToggle={this.resumeToggle}
           state={this.state}
         />
         {this.state.resume ? (
-          <Resume loggedIn={this.state.loggedIn} />
+          <Resume user={this.state.user} />
         ) : (
-          <CoverLetter />
+          <CoverLetter user={this.state.user} />
         )}
         <Footer />
       </div>

@@ -10,7 +10,7 @@ const navbar = props => {
         <img src={Logo} alt="logo" />
       </NavbarBrand>
       <Nav className="ml-auto" navbar>
-        {!props.loggedIn && (
+        {props.user.length === 0 ? (
           <NavItem>
             <Button
               href="/RegistrationAndSignUp"
@@ -19,18 +19,6 @@ const navbar = props => {
               color="dark"
             >
               Sign In
-            </Button>
-          </NavItem>
-        )}
-        {!props.loggedIn ? (
-          <NavItem>
-            <Button
-              href="/RegistrationAndSignUp"
-              size="sm"
-              className="signup ml-2 btn btn-outline-dark"
-              color="seconday"
-            >
-              <i className="fa fa-user-plus" aria-hidden="true" />
             </Button>
           </NavItem>
         ) : (
