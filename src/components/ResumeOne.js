@@ -259,6 +259,8 @@ class ResumeOne extends Component {
   };
 
   render() {
+    var getUser = JSON.parse(localStorage.getItem("user"));
+    const user = getUser.filter(user => user.logedin);
     localStorage.setItem("resumeOne", JSON.stringify(this.state));
     return (
       <div className="bodyStyle">
@@ -346,12 +348,14 @@ class ResumeOne extends Component {
             {/* EMPLOYMENT */}
             <div className="summary-container">
               <h4 className="subtitle">EMPLOYMENT</h4>
-              <button
-                className="btn-add-new-eployment"
-                onClick={() => this.handleToggle("addNewEploymentToggle")}
-              >
-                Add New Eployment
-              </button>
+              {user[0].pro && (
+                <button
+                  className="btn-add-new-eployment"
+                  onClick={() => this.handleToggle("addNewEploymentToggle")}
+                >
+                  Add New Eployment
+                </button>
+              )}
 
               {this.state.addNewEploymentToggle && (
                 <form onSubmit={e => this.handleAddNewEmployment(e)}>
@@ -470,12 +474,16 @@ class ResumeOne extends Component {
                         }
                         value={employer.responsibilityTwo}
                       />
-                      <button
-                        className="close-btn"
-                        onClick={() => this.handleRemoveEmploymemt(employer.id)}
-                      >
-                        X
-                      </button>
+                      {user[0].pro && (
+                        <button
+                          className="close-btn"
+                          onClick={() =>
+                            this.handleRemoveEmploymemt(employer.id)
+                          }
+                        >
+                          X
+                        </button>
+                      )}
                     </div>
                   </div>
                 );
@@ -484,14 +492,14 @@ class ResumeOne extends Component {
             {/* EDUCATION */}
             <div className="summary-container">
               <h4 className="subtitle">EDUCATION</h4>
-
-              <button
-                className="btn-add-new-eployment"
-                onClick={() => this.handleToggle("addNewEducationToggle")}
-              >
-                Add New Education
-              </button>
-
+              {user[0].pro && (
+                <button
+                  className="btn-add-new-eployment"
+                  onClick={() => this.handleToggle("addNewEducationToggle")}
+                >
+                  Add New Education
+                </button>
+              )}
               {this.state.addNewEducationToggle && (
                 <form onSubmit={e => this.handleAddNewEducation(e)}>
                   <div className="row">
@@ -572,13 +580,14 @@ class ResumeOne extends Component {
                           this.handlechangeInputEducation(e, index)
                         }
                       />
-
-                      <button
-                        className="close-btn"
-                        onClick={() => this.handleRemoveEducation(edu.id)}
-                      >
-                        X
-                      </button>
+                      {user[0].pro && (
+                        <button
+                          className="close-btn"
+                          onClick={() => this.handleRemoveEducation(edu.id)}
+                        >
+                          X
+                        </button>
+                      )}
                     </div>
                   </div>
                 );
@@ -614,14 +623,14 @@ class ResumeOne extends Component {
             {/* PROJECTS */}
             <div className="summary-container">
               <h4 className="subtitle">PROJECT</h4>
-
-              <button
-                className="btn-add-new-eployment"
-                onClick={() => this.handleToggle("addNewProjectToggle")}
-              >
-                Add New Project
-              </button>
-
+              {user[0].pro && (
+                <button
+                  className="btn-add-new-eployment"
+                  onClick={() => this.handleToggle("addNewProjectToggle")}
+                >
+                  Add New Project
+                </button>
+              )}
               {this.state.addNewProjectToggle && (
                 <form onSubmit={e => this.handleAddNewProject(e)}>
                   <div className="row">
@@ -695,12 +704,14 @@ class ResumeOne extends Component {
                         name="responsibilityThree"
                         onChange={e => this.handlechangeInputProjects(e, index)}
                       />
-                      <button
-                        className="close-btn"
-                        onClick={() => this.handleRemoveProject(project.id)}
-                      >
-                        X
-                      </button>
+                      {user[0].pro && (
+                        <button
+                          className="close-btn"
+                          onClick={() => this.handleRemoveProject(project.id)}
+                        >
+                          X
+                        </button>
+                      )}
                     </div>
                   </div>
                 );
